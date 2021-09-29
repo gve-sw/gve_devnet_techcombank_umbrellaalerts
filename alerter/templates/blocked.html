@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocked Requests</title>
+</head>
+<body>
+<b>SUMMARY OF REQUESTS</b>
+<br>
+{% for item in requests %}
+    <i>Top category</i>: {{ item.label }}<br>
+    <i>Type</i>: {{ item.type }}<br>
+    <i>No. of Blocked Requests</i>: {{ item.requestsblocked }}<br>
+    <i>No. of Allowed Requests</i>: {{ item.requestsallowed }}<br>
+    <i>Files Involved</i>: {{ item.files }}<br>
+    <br><br>
+{% endfor %}
+
+<p> If you want to see more detailed logs about the activity, please check the webex space or go to the dashboard:
+    https://login.umbrella.com/umbrella/?return_to=https%3A%2F%2Fdashboard.umbrella.com%2Fo%2F5478593%2F#/overview 
+</p>
+</body>
+</html>
