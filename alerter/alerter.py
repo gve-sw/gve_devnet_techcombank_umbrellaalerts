@@ -431,24 +431,10 @@ def sendWebexMessage(message, token, room):
 
 
 
-def send_to_text(message):
-    account_sid = 'AC6d71488f0175ff80b7d3b635bb467c42' 
-    auth_token = '01d53be4212e8f05f81b1a0fe4fdb798' 
-    client = Client(account_sid, auth_token) 
-    
-    message = client.messages.create(   
-                                body=message,
-                                messaging_service_sid='MG8fa822e048e3a57b7e12d529df908076',      
-                                to='+642102495100' 
-                            ) 
-    print(message.sid)
-
-
-
 #Call this to send a summary email  !
 def get_top_categories_summary(umbrellaInstance):
     #parameters
-    orgID = 5478593
+    orgID = UMBRELLA_ORG_ID
     access_token = umbrellaInstance.get_access_token()
     headers = {
             'Accept': 'application/json',
@@ -481,7 +467,6 @@ def send_text_alert(phone_number) :
                             ) 
     
     print(message.sid)
-
 
 
 if __name__ == '__main__':
